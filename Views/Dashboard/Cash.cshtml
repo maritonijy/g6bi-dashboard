@@ -1,0 +1,75 @@
+@{
+    ViewData["Title"] = "Cash, Receivables & Payables";
+}
+
+<section id="cash-root">
+    <div class="dash-head">
+        <div>
+            <div class="eyebrow">Dashboard 3 · Page 3 of 3 · KOVA | FY2025</div>
+            <h1>Cash, Receivables &amp; Payables</h1>
+            <p class="sub">Can we pay our bills, and is the cash actually being collected?</p>
+        </div>
+        <nav class="pagetabs">
+            <a href="/dashboard/1">1 · Executive</a>
+            <a href="/dashboard/2">2 · Profitability</a>
+            <a class="on" href="/dashboard/3">3 · Cash</a>
+        </nav>
+    </div>
+
+    <div class="slicers">
+        <label>Bank
+            <select id="cash-bank">
+                <option value="all">All</option>
+                <option value="JPMorgan Chase">JPMorgan Chase</option>
+                <option value="Bank of America">Bank of America</option>
+            </select>
+        </label>
+        <span class="scope" id="cash-scope">All banks</span>
+    </div>
+
+    <div class="kpis">
+        <div class="kpi vio"><div class="k">Cash balance</div><div class="v" id="k-cash">$4.30M</div><div class="s">Across all bank accounts</div></div>
+        <div class="kpi"><div class="k">AR outstanding</div><div class="v">$2.86M</div><div class="s">Invoiced, not yet collected</div></div>
+        <div class="kpi warn"><div class="k">AP outstanding</div><div class="v">$0.86M</div><div class="s">Owed to suppliers</div></div>
+        <div class="kpi bad"><div class="k">DSO</div><div class="v">83 days</div><div class="s">Customers take almost 3 months to pay</div></div>
+        <div class="kpi good"><div class="k">DPO</div><div class="v">22 days</div><div class="s">Suppliers are paid quickly</div></div>
+        <div class="kpi"><div class="k">Net working capital</div><div class="v">$2.00M</div><div class="s">Card value = AR − AP</div></div>
+    </div>
+
+    <div class="takeaway panel" style="margin-bottom:12px">
+        <div class="ph"><h3>Reading this page</h3><span class="hint">written takeaway</span></div>
+        <p>Customers pay in about 83 days and we pay suppliers in about 22, so working capital is tied up in receivables. Most receivables and payables are over 90 days old. <b>Decision:</b> escalate collections first, and reconcile old supplier balances before presenting the liquidity headroom. Use $4.30M cash, not the $6.30M bridge total.</p>
+    </div>
+
+    <div class="dash-grid three">
+        <article class="panel">
+            <div class="ph"><h3>Cash balance by bank</h3><a class="more" href="/element/d3-bank">Element details →</a></div>
+            <div class="chart-box short"><canvas id="c-bank"></canvas></div>
+        </article>
+        <article class="panel">
+            <div class="ph"><h3>Accounts receivable aging</h3><a class="more" href="/element/d3-ar">Element details →</a></div>
+            <div class="chart-box short"><canvas id="c-ar"></canvas></div>
+        </article>
+        <article class="panel">
+            <div class="ph"><h3>Accounts payable aging</h3><a class="more" href="/element/d3-ap">Element details →</a></div>
+            <div class="chart-box short"><canvas id="c-ap"></canvas></div>
+        </article>
+    </div>
+
+    <div class="dash-grid">
+        <article class="panel">
+            <div class="ph"><h3>Working capital bridge</h3><a class="more" href="/element/d3-wc">Element details →</a></div>
+            <div class="chart-box"><canvas id="c-wc"></canvas></div>
+            <p class="hint">Cash + AR − AP. Bridge total is $6.30M; the NWC card shows $2.00M (AR − AP). Align the two definitions before presenting.</p>
+        </article>
+        <aside class="panel">
+            <div class="ph"><h3>Before you present</h3></div>
+            <ul class="bullets">
+                <li>The cash-by-currency donut in Power BI totals $25.03M, which does not match the $4.30M cash balance. Review its measure before showing it.</li>
+                <li>Confirm the exact AR and AP aging amounts in the model. The bars here were read from the chart.</li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="foot">Source: invoices update 2026 · cash update 2026 · ledger update 2026 · USD · <a href="/element/d3-kpi">KPI details</a></div>
+</section>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] · Kova FY2025 BI</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">Kova Inc. · FY2025 BI</a>
+        <nav>
+            <a href="/">Deck</a>
+            <a href="/dashboard/1">Dashboard 1</a>
+            <a href="/dashboard/2">Dashboard 2</a>
+            <a href="/dashboard/3">Dashboard 3</a>
+            <a href="/Home/Schema">Model &amp; DAX</a>
+        </nav>
+    </header>
+
+    <main class="wrap">
+        @RenderBody()
+    </main>
+
+    <!-- Shared FY2025 data for all charts (generated from FinanceData.cs) -->
+    <script id="kova-data" type="application/json">@Html.Raw(FinanceData.ToJson())</script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="~/js/app.js" asp-append-version="true"></script>
+</body>
+</html>

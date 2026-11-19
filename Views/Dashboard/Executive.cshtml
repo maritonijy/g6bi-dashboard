@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Executive Financial Health";
+}
+
+<section id="exec-root">
+    <div class="dash-head">
+        <div>
+            <div class="eyebrow">Dashboard 1 · Page 1 of 3 · KOVA | FY2025</div>
+            <h1>Executive Financial Health</h1>
+            <p class="sub">Are we making money, and is the trend improving or declining?</p>
+        </div>
+        <nav class="pagetabs">
+            <a class="on" href="/dashboard/1">1 · Executive</a>
+            <a href="/dashboard/2">2 · Profitability</a>
+            <a href="/dashboard/3">3 · Cash</a>
+        </nav>
+    </div>
+
+    <div class="slicers">
+        <label>Quarter
+            <select id="exec-quarter">
+                <option value="all">All</option>
+                <option value="0">Q1</option>
+                <option value="1">Q2</option>
+                <option value="2">Q3</option>
+                <option value="3">Q4</option>
+            </select>
+        </label>
+        <span class="chip" id="exec-chip" hidden>Month: <b id="exec-sel"></b>
+            <button id="exec-clear" type="button">✕ clear</button>
+        </span>
+        <span class="scope" id="exec-scope">FY2025 · all months</span>
+    </div>
+
+    <div class="kpis">
+        <div class="kpi"><div class="k">Total revenue</div><div class="v" id="k-rev">$12.59M</div><div class="s">+42.1% Jan → Dec</div></div>
+        <div class="kpi bad"><div class="k">Total expenses</div><div class="v" id="k-exp">$14.62M</div><div class="s">Above revenue in all 12 months</div></div>
+        <div class="kpi bad"><div class="k">Net income</div><div class="v neg" id="k-net">−$2.03M</div><div class="s">About −$169K per month</div></div>
+        <div class="kpi good"><div class="k">Gross margin</div><div class="v">77.5%</div><div class="s">Product economics are healthy</div></div>
+        <div class="kpi warn"><div class="k">Opex vs budget</div><div class="v">+1.37%</div><div class="s">$159K over plan · unfavourable</div></div>
+        <div class="kpi vio"><div class="k">Cash balance</div><div class="v">$4.30M</div><div class="s">About 25 months at this burn</div></div>
+    </div>
+
+    <div class="dash-grid">
+        <article class="panel">
+            <div class="ph"><h3>Monthly revenue vs expenses</h3><a class="more" href="/element/d1-trend">Element details →</a></div>
+            <div class="chart-box"><canvas id="c-trend"></canvas></div>
+            <p class="hint">Click a month to filter every visual on this page.</p>
+        </article>
+        <aside class="panel takeaway">
+            <div class="ph"><h3>What this page tells a manager</h3><span class="hint">written takeaway</span></div>
+            <ul class="bullets">
+                <li><b>Revenue is growing.</b> $878K in January to $1.25M in December, +42.1%.</li>
+                <li><b>Expenses grow just as fast.</b> $1.03M to $1.42M, +37.7%, and above revenue in all 12 months.</li>
+                <li><b>Result: −$2.03M net loss.</b> The gap has not closed. Monthly losses range from −$150K to −$188K.</li>
+                <li><b>Decision:</b> hold non-people spend flat in Q1 and re-forecast the breakeven month.</li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="dash-grid two">
+        <article class="panel">
+            <div class="ph"><h3>Net income by month</h3><a class="more" href="/element/d1-net">Element details →</a></div>
+            <div class="chart-box short"><canvas id="c-net"></canvas></div>
+        </article>
+        <article class="panel">
+            <div class="ph"><h3>Cumulative revenue gap (expenses − revenue)</h3><a class="more" href="/element/d1-cum">Element details →</a></div>
+            <div class="chart-box short"><canvas id="c-cum"></canvas></div>
+        </article>
+    </div>
+
+    <div class="foot">Source: ledger update 2026 · dim_month · dim_account · USD thousands · <a href="/element/d1-kpi">KPI details</a> · <a href="/element/d1-slicers">Interactivity details</a></div>
+</section>

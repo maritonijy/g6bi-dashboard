@@ -1,0 +1,83 @@
+@model ElementPage
+@{
+    ViewData["Title"] = Model.Item.Title;
+    var item = Model.Item;
+}
+
+<article class="element">
+    <div class="crumbs">
+        <a href="/">Deck</a> / <a href="/dashboard/@item.Dashboard">Dashboard @item.Dashboard</a> / @item.Id
+    </div>
+
+    <div class="eyebrow">@Model.Position</div>
+    <h1>@item.Title</h1>
+    <p class="sub">@item.ChartType · <i>“@item.Question”</i></p>
+
+    @if (item.Rows is not null && item.Rows.Length > 0)
+    {
+        <div class="panel" style="margin-top:14px">
+            <div class="tbl-wrap">
+                <table>
+                    <tr><th>KPI</th><th>Measure</th><th>Value</th><th>What it means</th></tr>
+                    @foreach (var r in item.Rows)
+                    {
+                        <tr>
+                            <td><b>@r.Name</b></td>
+                            <td><code>@r.Measure</code></td>
+                            <td><b>@r.Value</b></td>
+                            <td>@r.Meaning</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    }
+
+    <div class="split">
+        <div class="panel">
+            <h4>What it shows</h4>
+            <p>@item.WhatItShows</p>
+            @if (!string.IsNullOrEmpty(item.Callout))
+            {
+                <div class="callout">@item.Callout</div>
+            }
+        </div>
+
+        <div class="stack">
+            <div class="card">
+                <h4>The insight</h4>
+                <ul class="bullets">
+                    @foreach (var insight in item.Insights)
+                    {
+                        <li>@insight</li>
+                    }
+                </ul>
+            </div>
+
+            <div class="card decision">
+                <h4>The decision</h4>
+                <p>@item.Decision</p>
+            </div>
+
+            <div class="card build">
+                <h4>Build it in Power BI</h4>
+                <p class="build">@item.PbiBuild</p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="pn">
+        @if (Model.Prev is not null)
+        {
+            <a href="/element/@Model.Prev.Id">← @Model.Prev.Title</a>
+        }
+        else
+        {
+            <span></span>
+        }
+        @if (Model.Next is not null)
+        {
+            <a href="/element/@Model.Next.Id" style="text-align:right">@Model.Next.Title →</a>
+        }
+    </nav>
+</article>

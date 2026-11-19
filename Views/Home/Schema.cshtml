@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Model & DAX";
+}
+
+<section>
+    <div class="eyebrow">The model behind the dashboards</div>
+    <h1>Star schema and measures</h1>
+    <p class="sub">Build the model before any visual. Every chart reads from it.</p>
+
+    <div class="dash-grid two" style="margin-top:14px">
+        <article class="panel">
+            <h3>Tables in the Power BI model</h3>
+            <div class="tbl-wrap" style="margin-top:8px">
+                <table>
+                    <tr><th>Table</th><th>Role</th></tr>
+                    <tr><td><code>ledger update 2026</code></td><td>Fact: every accounting line (account, department, amount)</td></tr>
+                    <tr><td><code>budget update 2026</code></td><td>Fact: approved budget by department and account</td></tr>
+                    <tr><td><code>invoices update 2026</code></td><td>Fact: receivables (customer, invoice date, net amount, payment status)</td></tr>
+                    <tr><td><code>cash update 2026</code></td><td>Fact: balances by bank account, country and currency</td></tr>
+                    <tr><td><code>dim_month</code></td><td>Date dimension: month name, month start, quarter</td></tr>
+                    <tr><td><code>dim_account</code></td><td>Dimension: account code, name, category</td></tr>
+                    <tr><td><code>dim_department</code></td><td>Dimension: department</td></tr>
+                    <tr><td><code>WC Steps</code></td><td>Drives the working-capital waterfall</td></tr>
+                    <tr><td><code>_Measures</code></td><td>Holds the DAX measures</td></tr>
+                </table>
+            </div>
+            <p class="hint">Relationships were inferred from shared keys. Confirm each one in Power BI's Model view, and keep them single-direction, one-to-many from each dimension.</p>
+        </article>
+
+        <article class="panel">
+            <h3>Measures used in the dashboards</h3>
+            <ul class="bullets" style="margin-top:10px">
+                <li><code>[Total Revenue]</code> <code>[Total Expenses]</code> <code>[Net Income]</code></li>
+                <li><code>[COGS]</code> <code>[Operating Expenses]</code> <code>[Budgeted Opex]</code> <code>[Opex Variance]</code></li>
+                <li><code>[Gross Margin %]</code> <code>[Budget Utilisation %]</code></li>
+                <li><code>[Cash Balance]</code> <code>[Bank Balance USD]</code></li>
+                <li><code>[AR Outstanding]</code> <code>[AP Outstanding]</code> <code>[DSO]</code> <code>[DPO]</code></li>
+                <li><code>[Net Working Capital]</code> <code>[Cumulative Gap]</code></li>
+            </ul>
+            <p class="hint">Measure names come from the _Measures table in your .pbix. Check the exact DAX there before you present.</p>
+        </article>
+    </div>
+
+    <div class="callout" style="margin-top:14px">
+        Mark <code>dim_month</code> as the date table, and keep all amounts in USD. Mixing currencies on one axis makes a page hard to read.
+    </div>
+</section>

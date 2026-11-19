@@ -1,0 +1,149 @@
+@{
+    ViewData["Title"] = "Finance Performance Analysis Dashboard";
+}
+
+<div class="deck" id="deck">
+
+    <!-- 1 · Title -->
+    <section class="slide">
+        <div class="eyebrow">ITELEC4 · Final Project · Group 6</div>
+        <h1 style="font-size:clamp(28px,4.6vw,46px);margin-top:14px">Finance Performance<br />Analysis Dashboard</h1>
+        <p class="sub" style="font-size:15px;max-width:760px">Kova Inc. · FY2025 · Revenue, expenses and profitability · Budget vs actual · Cash flow, receivables and payables</p>
+        <div class="pills">
+            <span class="pill on">3 dashboards</span>
+            <span class="pill">15 element pages</span>
+            <span class="pill">star schema</span>
+            <span class="pill">slicers + cross-filtering</span>
+        </div>
+        <p class="sub" style="margin-top:18px;font-size:12px">
+            Prepared by: Joan N. Chavez · Angela M. Delima · Jayrald Miguel O. Doronio · Fredelina R. Gonzales · Jericho E. Magsino · Maritoni Joy Sapinoso<br />
+            Instructor: Prof. Arsenio Arellano Jr.
+        </p>
+    </section>
+
+    <!-- 2 · Business problem -->
+    <section class="slide">
+        <div class="eyebrow">The business problem</div>
+        <h2>Revenue grows, but the company still loses money</h2>
+        <p class="sub" style="font-size:15px;margin-top:10px">Each dashboard answers one management question about a specific area of financial performance.</p>
+        <ul class="bullets" style="margin-top:20px;font-size:15px">
+            <li><b>Revenue grew 42.1%</b> in FY2025, from $878K in January to $1.25M in December.</li>
+            <li><b>Expenses grew 37.7%</b> and were higher than revenue in every month. The result is a net loss of $2.03M.</li>
+            <li><b>Users</b> are the CFO, finance partners, department heads and treasury. They need to know where profit is lost, which budgets are over, and whether cash covers obligations.</li>
+        </ul>
+    </section>
+
+    <!-- 3 · Three dashboards -->
+    <section class="slide">
+        <div class="eyebrow">What we are presenting</div>
+        <h2>Three dashboards, three questions</h2>
+        <div class="grid-cards" style="margin-top:16px">
+            <a class="link-card" href="/dashboard/1">
+                <div class="eyebrow">Dashboard 1</div>
+                <h3 style="font-size:16px;margin:6px 0">Executive Financial Health</h3>
+                <p class="sub">“Are we making money, and is the trend getting better or worse?”</p>
+                <p class="hint">Open the dashboard →</p>
+            </a>
+            <a class="link-card" href="/dashboard/2" style="border-top:3px solid var(--violet)">
+                <div class="eyebrow" style="color:var(--violet)">Dashboard 2</div>
+                <h3 style="font-size:16px;margin:6px 0">Profitability &amp; Budget Control</h3>
+                <p class="sub">“Where is the money going, and are we staying inside the budget?”</p>
+                <p class="hint">Open the dashboard →</p>
+            </a>
+            <a class="link-card" href="/dashboard/3" style="border-top:3px solid var(--mint)">
+                <div class="eyebrow" style="color:var(--mint)">Dashboard 3</div>
+                <h3 style="font-size:16px;margin:6px 0">Cash, Receivables &amp; Payables</h3>
+                <p class="sub">“Can we pay our bills, and is the cash actually collected?”</p>
+                <p class="hint">Open the dashboard →</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 4 · Key numbers -->
+    <section class="slide">
+        <div class="eyebrow">The numbers behind the story</div>
+        <h2>FY2025 at a glance</h2>
+        <div class="kpis" style="margin-top:16px">
+            <div class="kpi"><div class="k">Total revenue</div><div class="v">$12.59M</div><div class="s">+42.1% Jan → Dec</div></div>
+            <div class="kpi bad"><div class="k">Total expenses</div><div class="v">$14.62M</div><div class="s">Above revenue every month</div></div>
+            <div class="kpi bad"><div class="k">Net income</div><div class="v neg">−$2.03M</div><div class="s">About −$169K a month</div></div>
+            <div class="kpi good"><div class="k">Gross margin</div><div class="v">77.5%</div><div class="s">Pricing is not the problem</div></div>
+            <div class="kpi vio"><div class="k">Cash balance</div><div class="v">$4.30M</div><div class="s">About 25 months at this burn</div></div>
+            <div class="kpi warn"><div class="k">DSO / DPO</div><div class="v">83 / 22</div><div class="s">Customers pay slowly, suppliers are paid fast</div></div>
+        </div>
+    </section>
+
+    <!-- 5 · Decisions -->
+    <section class="slide">
+        <div class="eyebrow">Across all three dashboards</div>
+        <h2>What decisions can a manager make?</h2>
+        <div class="tbl-wrap" style="margin-top:12px">
+            <table>
+                <tr><th>Insight</th><th>Decision</th><th>Owner</th></tr>
+                <tr><td>Net loss in every month</td><td>Set a breakeven revenue target of about $1.42M a month</td><td>CEO / Sales</td></tr>
+                <tr><td>Expenses grow faster than revenue in absolute terms</td><td>Cap opex growth below revenue growth for three quarters</td><td>CFO</td></tr>
+                <tr><td>People is about 41% of spend</td><td>Allocate savings by department size; a 5% People cut is about $300K</td><td>COO / HR</td></tr>
+                <tr><td>Opex is $159K over budget</td><td>Require approval for any department above 100% of budget</td><td>Finance business partner</td></tr>
+                <tr><td>About 77% of receivables are over 90 days</td><td>Escalate collections and assess a bad-debt provision</td><td>Credit control</td></tr>
+                <tr><td>About 81% of cash sits at one bank</td><td>Review concentration and deposit protection</td><td>Treasury</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- 6 · Element index -->
+    <section class="slide">
+        <div class="eyebrow">Detailed element pages</div>
+        <h2>Every chart, explained</h2>
+        <p class="sub">Each page says what the element shows, the insight, the decision it supports and how to build it in Power BI.</p>
+        <div class="elem-index" style="margin-top:14px">
+            <div class="card">
+                <h4>Dashboard 1 · Executive</h4>
+                <ul class="bullets">
+                    <li><a href="/element/d1-kpi">KPI strip</a></li>
+                    <li><a href="/element/d1-trend">Monthly revenue vs expenses</a></li>
+                    <li><a href="/element/d1-net">Net income by month</a></li>
+                    <li><a href="/element/d1-cum">Cumulative revenue gap</a></li>
+                    <li><a href="/element/d1-slicers">Slicers &amp; interactivity</a></li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Dashboard 2 · Profitability</h4>
+                <ul class="bullets">
+                    <li><a href="/element/d2-kpi">Cost KPIs</a></li>
+                    <li><a href="/element/d2-dept">Total cost by department</a></li>
+                    <li><a href="/element/d2-trend">Opex trend by department</a></li>
+                    <li><a href="/element/d2-cogs">Cost of sales split</a></li>
+                    <li><a href="/element/d2-budget">Opex vs budget variance</a></li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Dashboard 3 · Cash</h4>
+                <ul class="bullets">
+                    <li><a href="/element/d3-kpi">Liquidity KPIs</a></li>
+                    <li><a href="/element/d3-bank">Cash by bank</a></li>
+                    <li><a href="/element/d3-ar">AR aging</a></li>
+                    <li><a href="/element/d3-ap">AP aging</a></li>
+                    <li><a href="/element/d3-wc">Working capital bridge</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7 · Conclusion -->
+    <section class="slide">
+        <div class="eyebrow">Conclusion</div>
+        <h2>From a picture to a decision</h2>
+        <ul class="bullets" style="margin-top:16px;font-size:15px">
+            <li>The dashboards give a consolidated view of Kova Inc.'s FY2025 financial performance.</li>
+            <li>They show the loss is structural and sits in operating costs, while cash and receivables need attention.</li>
+            <li>Interactive visuals let a manager drill from the headline into the month, department or bank behind it.</li>
+        </ul>
+    </section>
+</div>
+
+<div class="deck-nav">
+    <button id="prev" type="button" class="navbtn" aria-label="Previous slide">‹</button>
+    <span id="cnt" class="sub">1 / 7</span>
+    <button id="next" type="button" class="navbtn" aria-label="Next slide">›</button>
+</div>
+<div id="dots"></div>

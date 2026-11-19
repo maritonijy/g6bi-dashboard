@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Profitability & Budget Control";
+}
+
+<section id="prof-root">
+    <div class="dash-head">
+        <div>
+            <div class="eyebrow">Dashboard 2 · Page 2 of 3 · KOVA | PROFITABILITY</div>
+            <h1>Profitability &amp; Budget Analysis</h1>
+            <p class="sub">Where is the money going, and are we staying inside the budget?</p>
+        </div>
+        <nav class="pagetabs">
+            <a href="/dashboard/1">1 · Executive</a>
+            <a class="on" href="/dashboard/2">2 · Profitability</a>
+            <a href="/dashboard/3">3 · Cash</a>
+        </nav>
+    </div>
+
+    <div class="slicers">
+        <label>Department
+            <select id="prof-dept">
+                <option value="all">All</option>
+            </select>
+        </label>
+        <span class="scope" id="prof-scope">All departments</span>
+    </div>
+
+    <div class="kpis">
+        <div class="kpi good"><div class="k">COGS</div><div class="v">$2.83M</div><div class="s">19% of total cost</div></div>
+        <div class="kpi bad"><div class="k">Operating expenses</div><div class="v">$11.78M</div><div class="s">81% of total cost</div></div>
+        <div class="kpi"><div class="k">Budgeted opex</div><div class="v">$11.62M</div><div class="s">Approved plan</div></div>
+        <div class="kpi warn"><div class="k">Opex variance</div><div class="v" id="k-var">+$159.45K</div><div class="s">+1.37% over plan · unfavourable</div></div>
+        <div class="kpi good"><div class="k">Gross margin</div><div class="v">77.5%</div><div class="s">Pricing is not the problem</div></div>
+    </div>
+
+    <div class="takeaway panel" style="margin-bottom:12px">
+        <div class="ph"><h3>Reading this page</h3><span class="hint">written takeaway</span></div>
+        <p>Total cost is $14.62M. Operating expenses are 81% of it, and the overspend sits mainly in People and Marketing. Positive variance is unfavourable. <b>Decision:</b> fix the operating-cost line, not the price list.</p>
+    </div>
+
+    <div class="dash-grid">
+        <article class="panel">
+            <div class="ph"><h3>Total cost by department</h3><a class="more" href="/element/d2-dept">Element details →</a></div>
+            <div class="chart-box"><canvas id="c-dept"></canvas></div>
+            <p class="hint">Click a bar to filter the page.</p>
+        </article>
+        <article class="panel">
+            <div class="ph"><h3>Cost of sales split</h3><a class="more" href="/element/d2-cogs">Element details →</a></div>
+            <div class="chart-box"><canvas id="c-cogs"></canvas></div>
+        </article>
+    </div>
+
+    <div class="dash-grid two">
+        <article class="panel">
+            <div class="ph"><h3>Opex trend by department</h3><a class="more" href="/element/d2-trend">Element details →</a></div>
+            <div class="chart-box"><canvas id="c-trend"></canvas></div>
+        </article>
+        <article class="panel">
+            <div class="ph"><h3>Opex vs 100% budget · variance</h3><a class="more" href="/element/d2-budget">Element details →</a></div>
+            <div class="chart-box"><canvas id="c-var"></canvas></div>
+        </article>
+    </div>
+
+    <div class="foot">Source: ledger update 2026 · budget update 2026 · dim_department · USD thousands · <a href="/element/d2-kpi">KPI details</a></div>
+</section>
