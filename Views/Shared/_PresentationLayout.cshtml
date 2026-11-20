@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070C15" />
+    <title>@ViewData["Title"] · Kova FY2025 BI</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/presentation.css" asp-append-version="true" />
+</head>
+<body class="pp-mode">
+    @RenderBody()
+
+    <!-- Shared FY2025 data for the element visuals (same source the dashboards use) -->
+    <script id="kova-data" type="application/json">@Html.Raw(FinanceData.ToJson())</script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="~/js/presentation.js" asp-append-version="true"></script>
+</body>
+</html>

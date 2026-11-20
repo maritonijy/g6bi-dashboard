@@ -95,6 +95,17 @@ public static class FinanceData
         new("Services", 730)
     };
 
+    // Cash-by-currency doughnut ($K), read from the report. The report total is
+    // $25.03M, which does not reconcile to the $4.30M cash balance, and the
+    // slice-to-currency mapping could not be read from the chart.
+    public static readonly NamedValue[] CashByCurrency =
+    {
+        new("Slice 1", 14200),
+        new("Slice 2", 4300),
+        new("Slice 3", 3680),
+        new("Slice 4", 2850)
+    };
+
     public static string ToJson() => JsonSerializer.Serialize(new
     {
         months = Months,
@@ -108,6 +119,7 @@ public static class FinanceData
         banks = CashByBank,
         ar = ArAging,
         ap = ApAging,
-        cogs = CogsSplit
+        cogs = CogsSplit,
+        fx = CashByCurrency
     }, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
 }

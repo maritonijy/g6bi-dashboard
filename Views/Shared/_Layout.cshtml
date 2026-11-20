@@ -1,3 +1,7 @@
+@{
+    // ?embed=1 renders just the report body, for the presentation's dashboard overview slides
+    var embed = Context.Request.Query["embed"] == "1";
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +10,21 @@
     <title>@ViewData["Title"] · Kova FY2025 BI</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
-<body>
-    <header class="topbar">
-        <a class="brand" href="/">Kova Inc. · FY2025 BI</a>
-        <nav>
-            <a href="/">Deck</a>
-            <a href="/dashboard/1">Dashboard 1</a>
-            <a href="/dashboard/2">Dashboard 2</a>
-            <a href="/dashboard/3">Dashboard 3</a>
-            <a href="/Home/Schema">Model &amp; DAX</a>
-        </nav>
-    </header>
+<body class="@(embed ? "embed" : "app")">
+    @if (!embed)
+    {
+        <header class="topbar">
+            <a class="brand" href="/">Kova Inc. · FY2025 BI</a>
+            <nav>
+                <a href="/">Deck</a>
+                <a href="/presentation">Presentation</a>
+                <a href="/dashboard/1">Dashboard 1</a>
+                <a href="/dashboard/2">Dashboard 2</a>
+                <a href="/dashboard/3">Dashboard 3</a>
+                <a href="/Home/Schema">Model &amp; DAX</a>
+            </nav>
+        </header>
+    }
 
     <main class="wrap">
         @RenderBody()

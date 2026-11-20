@@ -1,0 +1,78 @@
+@model ElementSlideModel
+@{
+    var item = Model.Item;
+    var visual = Model.Visual;
+    var navLabel = item.Title.Contains(':') ? item.Title.Split(':')[0] : item.Title;
+}
+
+<section class="pp-slide" data-title="@item.Title" data-nav="@navLabel" data-group="@Model.Group">
+    <div class="pp-canvas pp-element">
+        <header class="pp-el-head">
+            <div class="pp-eyebrow">@Model.Position</div>
+            <h1>@item.Title</h1>
+            <p class="pp-sub">@item.ChartType · <i>“@item.Question”</i></p>
+        </header>
+
+        <div class="pp-el-body">
+            <figure class="pp-visual">
+                @if (item.Rows is not null && item.Rows.Length > 0)
+                {
+                    <div class="pp-kpis @(item.Rows.Length == 5 ? "five" : "")">
+                        @foreach (var row in item.Rows)
+                        {
+                            <div class="pp-kpi @(row.Value.StartsWith("−") || row.Value.StartsWith("+") ? "bad" : "")">
+                                <div class="pp-kpi-k">@row.Name</div>
+                                <div class="pp-kpi-v">@row.Value</div>
+                                <div class="pp-kpi-m">@row.Meaning</div>
+                                <code class="pp-kpi-measure">@row.Measure</code>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="pp-chart">
+                        <canvas id="pp-chart-@item.Id" role="img" aria-label="@item.Title chart"></canvas>
+                    </div>
+                }
+                <figcaption class="pp-caption">@visual.Caption</figcaption>
+            </figure>
+
+            <aside class="pp-notes">
+                <div class="pp-note">
+                    <h4>What it shows</h4>
+                    <p>@item.WhatItShows</p>
+                </div>
+
+                <div class="pp-note">
+                    <h4>Fields &amp; measures</h4>
+                    <dl class="pp-fields">
+                        @foreach (var field in visual.Fields)
+                        {
+                            <dt>@field.Label</dt>
+                            <dd>@field.Value</dd>
+                        }
+                    </dl>
+                </div>
+
+                <div class="pp-note">
+                    <h4>What a manager reads</h4>
+                    <ul class="pp-ins">
+                        @foreach (var insight in item.Insights)
+                        {
+                            <li>@insight</li>
+                        }
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="pp-el-foot">
+            <p class="pp-decision"><b>Decision</b> @item.Decision</p>
+            @if (!string.IsNullOrEmpty(visual.Note))
+            {
+                <p class="pp-note-chip">@visual.Note</p>
+            }
+        </footer>
+    </div>
+</section>

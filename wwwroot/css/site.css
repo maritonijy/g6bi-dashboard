@@ -323,6 +323,27 @@ tr:last-child td { border-bottom: none; }
 .link-card:hover { border-color: var(--accent); text-decoration: none; }
 .elem-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 
+/* ───────── Embedded report (presentation overview slides) ───────── */
+body.embed { background: var(--slide); }
+body.embed .topbar { display: none; }
+body.embed .wrap { max-width: none; padding: 10px 16px 8px; }
+body.embed .dash-head,
+body.embed .pagetabs,
+body.embed .more,
+body.embed .foot { display: none; }
+body.embed .slicers { margin-bottom: 8px; font-size: 12px; }
+body.embed .kpis { margin-bottom: 8px; }
+body.embed .kpi { padding: 8px 11px; }
+body.embed .kpi .v { font-size: 21px; }
+body.embed .panel { padding: 9px 12px; }
+body.embed .chart-box { height: 200px; }
+body.embed .chart-box.short { height: 165px; }
+body.embed .dash-grid { margin-bottom: 8px; gap: 10px; }
+body.embed .bullets { gap: 6px; }
+body.embed .bullets li { font-size: 12px; }
+body.embed .takeaway p { font-size: 12px; }
+body.embed .hint { font-size: 10.5px; }
+
 /* ───────── Responsive breakpoints ───────── */
 @media (max-width: 1200px) {
     .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }

@@ -1,0 +1,291 @@
+@{
+    ViewData["Title"] = "Presentation";
+    Layout = "_PresentationLayout";
+    var decks = PresentationCatalog.Decks;
+    var elements = ElementCatalog.All.ToDictionary(e => e.Id);
+    var tables = PresentationCatalog.Tables;
+    var firstTable = PresentationCatalog.Tables[0];
+}
+
+<div class="pp" id="pp">
+    <aside class="pp-side" id="ppSide">
+        <div class="pp-brand">
+            <span class="pp-mark">K</span>
+            <span class="pp-brand-text">
+                <b>Kova Inc. · FY2025</b>
+                <small>Finance Performance Analysis</small>
+            </span>
+        </div>
+        <nav class="pp-nav" id="ppNav" aria-label="Presentation sections"></nav>
+        <div class="pp-side-foot">
+            <span class="pp-key">←</span><span class="pp-key">→</span> move
+            <span class="pp-sep">·</span>
+            <span class="pp-key">Esc</span> exit
+        </div>
+    </aside>
+
+    <div class="pp-main">
+        <header class="pp-top">
+            <div class="pp-top-left">
+                <span class="pp-dot" aria-hidden="true"></span>
+                <span class="pp-top-title">Finance Performance Analysis Dashboard</span>
+                <span class="pp-top-sub">ITELEC4 · Final Project · Group 6</span>
+            </div>
+            <div class="pp-top-right">
+                <a class="pp-ghost" href="/">Classic deck</a>
+                <a class="pp-ghost" href="/Home/Schema">Model &amp; tables</a>
+                <button id="ppFsTop" class="pp-solid" type="button">Present</button>
+            </div>
+        </header>
+
+        <div class="pp-stage" id="ppStage">
+            <div class="pp-frame" id="ppFrame">
+
+                <!-- 1 · Title (existing page, preserved) -->
+                <section class="pp-slide" data-title="Title" data-group="Opening">
+                    <div class="pp-canvas pp-legacy">
+                        <div class="eyebrow">ITELEC4 · Final Project · Group 6</div>
+                        <h1 class="pp-title">Finance Performance<br />Analysis Dashboard</h1>
+                        <p class="sub pp-lead">Kova Inc. · FY2025 · Revenue, expenses and profitability · Budget vs actual · Cash flow, receivables and payables</p>
+                        <div class="pills">
+                            <span class="pill on">3 dashboards</span>
+                            <span class="pill">15 element pages</span>
+                            <span class="pill">star schema</span>
+                            <span class="pill">slicers + cross-filtering</span>
+                        </div>
+                        <p class="sub pp-credits">
+                            Prepared by: Joan N. Chavez · Angela M. Delima · Jayrald Miguel O. Doronio · Fredelina R. Gonzales · Jericho E. Magsino · Maritoni Joy Sapinoso<br />
+                            Instructor: Prof. Arsenio Arellano Jr.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 2 · Business problem (existing page, preserved) -->
+                <section class="pp-slide" data-title="Business problem" data-group="Opening">
+                    <div class="pp-canvas pp-legacy">
+                        <div class="eyebrow">The business problem</div>
+                        <h2>Revenue grows, but the company still loses money</h2>
+                        <p class="sub pp-lead">Each dashboard answers one management question about a specific area of financial performance.</p>
+                        <ul class="bullets pp-legacy-bullets">
+                            <li><b>Revenue grew 42.1%</b> in FY2025, from $878K in January to $1.25M in December.</li>
+                            <li><b>Expenses grew 37.7%</b> and were higher than revenue in every month. The result is a net loss of $2.03M.</li>
+                            <li><b>Users</b> are the CFO, finance partners, department heads and treasury. They need to know where profit is lost, which budgets are over, and whether cash covers obligations.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 3 · Three dashboards (existing page, preserved; cards now navigate inside the deck) -->
+                <section class="pp-slide" data-title="Dashboard structure" data-group="Opening">
+                    <div class="pp-canvas pp-legacy">
+                        <div class="eyebrow">What we are presenting</div>
+                        <h2>Three dashboards, three questions</h2>
+                        <div class="grid-cards pp-legacy-cards">
+                            <button type="button" class="link-card" data-goto="5">
+                                <div class="eyebrow">Dashboard 1</div>
+                                <h3>Executive Financial Health</h3>
+                                <p class="sub">“Are we making money, and is the trend getting better or worse?”</p>
+                                <p class="hint">Open the dashboard →</p>
+                            </button>
+                            <button type="button" class="link-card" style="border-top-color:var(--violet)" data-goto="10">
+                                <div class="eyebrow" style="color:var(--violet)">Dashboard 2</div>
+                                <h3>Profitability &amp; Budget Control</h3>
+                                <p class="sub">“Where is the money going, and are we staying inside the budget?”</p>
+                                <p class="hint">Open the dashboard →</p>
+                            </button>
+                            <button type="button" class="link-card" style="border-top-color:var(--mint)" data-goto="16">
+                                <div class="eyebrow" style="color:var(--mint)">Dashboard 3</div>
+                                <h3>Cash, Receivables &amp; Payables</h3>
+                                <p class="sub">“Can we pay our bills, and is the cash actually collected?”</p>
+                                <p class="hint">Open the dashboard →</p>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4 · Data tables -->
+                <section class="pp-slide" data-title="Data tables" data-group="Opening">
+                    <div class="pp-canvas pp-tables">
+                        <header class="pp-tables-head">
+                            <div>
+                                <div class="pp-eyebrow">Data model · Page 4</div>
+                                <h1>Tables used in the Power BI project</h1>
+                                <p class="pp-sub">Thirteen tables: four facts, three dimensions, two supporting tables and four auto date tables. Select a table to read its exact columns and data types.</p>
+                            </div>
+                            <div class="pp-chiprow">
+                                <span class="pp-chip on">4 fact</span>
+                                <span class="pp-chip">3 dimension</span>
+                                <span class="pp-chip">2 supporting</span>
+                                <span class="pp-chip">4 auto date</span>
+                            </div>
+                        </header>
+
+                        <div class="pp-tables-body">
+                            <div class="pp-tlist">
+                                @foreach (var kind in PresentationCatalog.Kinds)
+                                {
+                                    var group = tables.Where(t => t.Kind == kind).ToArray();
+                                    <div class="pp-tgroup">@kind <span>@group.Length</span></div>
+                                    foreach (var table in group)
+                                    {
+                                        <button type="button" class="pp-trow @(table == firstTable ? "on" : "")" data-table="@table.Name" title="@table.Name">
+                                            <span class="pp-trow-name">@table.Name</span>
+                                            <span class="pp-trow-cols">@table.Columns.Count(c => !c.Hidden)</span>
+                                        </button>
+                                    }
+                                }
+                            </div>
+
+                            <div class="pp-tdetails">
+                                @foreach (var table in tables)
+                                {
+                                    <article class="pp-tdetail @(table == firstTable ? "on" : "")" data-table="@table.Name">
+                                        <div class="pp-tdetail-head">
+                                            <div>
+                                                <div class="pp-eyebrow">@table.Kind table</div>
+                                                <h2>@table.Name</h2>
+                                            </div>
+                                            <span class="pp-badge">
+                                                @table.Columns.Count(c => !c.Hidden) visible ·
+                                                @table.Columns.Count(c => c.Hidden) hidden
+                                            </span>
+                                        </div>
+                                        <p class="pp-tdetail-purpose">@table.Purpose</p>
+                                        <div class="pp-cols-wrap">
+                                            <table class="pp-cols">
+                                                <thead>
+                                                    <tr><th>Column</th><th>Data type</th><th>Visibility</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var column in table.Columns)
+                                                    {
+                                                        <tr class="@(column.Hidden ? "is-hidden" : "")">
+                                                            <td>@column.Name</td>
+                                                            <td>@column.DataType</td>
+                                                            <td>@(column.Hidden ? "Hidden" : "Visible")</td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </article>
+                                }
+                            </div>
+                        </div>
+
+                        <p class="pp-tables-foot">
+                            Relationships were inferred from shared keys — <code>account_code</code>, <code>account_name</code>, <code>department</code> and <code>month_start</code>.
+                            Confirm cardinality and filter direction in Power BI’s Model view.
+                        </p>
+                    </div>
+                </section>
+
+                @foreach (var deck in decks)
+                {
+                    var overviewSlide = deck.Number == 1 ? 5 : deck.Number == 2 ? 10 : 16;
+
+                    <!-- Dashboard overview: interactive report embedded from the project's own dashboard page -->
+                    <section class="pp-slide pp-ov" data-title="Dashboard @deck.Number · Overview" data-group="@deck.Group">
+                        <div class="pp-canvas">
+                            <header class="pp-ov-head">
+                                <div class="pp-ov-title">
+                                    <div class="pp-eyebrow">Dashboard @deck.Number · Interactive report · Page @deck.Number of 3</div>
+                                    <h1>@deck.Name</h1>
+                                    <p class="pp-sub">@(deck.Number == 1
+                                        ? "Are we making money, and is the trend improving or declining?"
+                                        : deck.Number == 2
+                                            ? "Where is the money going, and are we staying inside the budget?"
+                                            : "Can we pay our bills, and is the cash actually collected?")</p>
+                                </div>
+                                <div class="pp-ov-tools">
+                                    @if (deck.Number == 1)
+                                    {
+                                        <span class="pp-chip on">Quarter slicer</span>
+                                        <span class="pp-chip">Click a month</span>
+                                        <span class="pp-chip">6 KPIs</span>
+                                        <span class="pp-chip">3 visuals</span>
+                                    }
+                                    else if (deck.Number == 2)
+                                    {
+                                        <span class="pp-chip on">Department slicer</span>
+                                        <span class="pp-chip">Click a bar</span>
+                                        <span class="pp-chip">5 KPIs</span>
+                                        <span class="pp-chip">4 visuals</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="pp-chip on">Bank slicer</span>
+                                        <span class="pp-chip">Click a bank</span>
+                                        <span class="pp-chip">6 KPIs</span>
+                                        <span class="pp-chip">5 visuals</span>
+                                    }
+                                </div>
+                            </header>
+
+                            <div class="pp-report">
+                                <div class="pp-report-fit">
+                                    <iframe data-src="/dashboard/@deck.Number?embed=1"
+                                            title="Dashboard @deck.Number: @deck.Name, interactive"></iframe>
+                                </div>
+                                <span class="pp-report-hint">Live report — use the slicers and click a bar or month to filter. Slide change keeps your selection.</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    var position = 0;
+                    foreach (var id in deck.ElementIds)
+                    {
+                        position++;
+                        var item = elements[id];
+                        var label = $"Dashboard {deck.Number} · Element {position} of {deck.ElementIds.Length}";
+                        <partial name="_ElementSlide" model="new ElementSlideModel(item, PresentationCatalog.Visuals[id], label, deck.Group)" />
+                    }
+                }
+
+                <!-- 23 · Next steps (PDF order) -->
+                <section class="pp-slide" data-title="Next steps · Recommendations" data-nav="Recommendations" data-group="Closing">
+                    <div class="pp-canvas pp-legacy pp-recos">
+                        <div class="eyebrow">Next steps</div>
+                        <h2>Recommendations</h2>
+                        <p class="sub pp-lead">Six actions that follow from the three dashboards.</p>
+                        <ol class="pp-reco-list">
+                            <li><span>1</span>Set monthly revenue targets based on operating costs.</li>
+                            <li><span>2</span>Review and control major operating expenses.</li>
+                            <li><span>3</span>Monitor departmental budget variances.</li>
+                            <li><span>4</span>Improve customer payment collection.</li>
+                            <li><span>5</span>Review supplier payment terms.</li>
+                            <li><span>6</span>Monitor foreign currency cash balances.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- 24 · Closing (PDF order) -->
+                <section class="pp-slide" data-title="Conclusion" data-group="Closing">
+                    <div class="pp-canvas pp-legacy pp-closing">
+                        <div class="eyebrow">Closing</div>
+                        <h2>Conclusion</h2>
+                        <p class="pp-closing-text">The dashboard provides a consolidated view of Kova Inc.'s FY2025 financial performance. It helps identify profitability issues, spending patterns, and cash management concerns. Its interactive visuals support faster financial analysis and more informed decisions.</p>
+                        <p class="pp-credits">Group 6 · Finance Performance Analysis Dashboard · Kova Inc. FY2025</p>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <footer class="pp-bottom">
+            <div class="pp-ctrls">
+                <button id="ppPrev" type="button" class="pp-btn" aria-label="Previous slide" title="Previous (←)">‹</button>
+                <span id="ppCounter" class="pp-counter" aria-live="polite">1 of 24</span>
+                <button id="ppNext" type="button" class="pp-btn" aria-label="Next slide" title="Next (→)">›</button>
+            </div>
+
+            <div class="pp-thumbs-wrap">
+                <div id="ppThumbs" class="pp-thumbs" aria-label="Slide thumbnails"></div>
+            </div>
+
+            <div class="pp-bottom-right">
+                <span class="pp-hintline"><span class="pp-key">←</span><span class="pp-key">→</span> navigate</span>
+                <button id="ppFs" type="button" class="pp-btn pp-fs" aria-label="Toggle full screen" title="Full screen (F)">Full screen</button>
+            </div>
+        </footer>
+    </div>
+</div>

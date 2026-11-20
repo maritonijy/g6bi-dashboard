@@ -270,7 +270,7 @@ public static class ElementCatalog
         new ElementDetail
         {
             Id = "d3-wc", Dashboard = 3,
-            Title = "Working capital bridge and currency",
+            Title = "Working capital bridge",
             ChartType = "Waterfall",
             Question = "Where does the liquidity number come from?",
             WhatItShows = "How cash, receivables and payables combine into the working-capital figure.",
@@ -281,8 +281,25 @@ public static class ElementCatalog
                 "Use the $4.30M cash balance, not the $6.30M bridge total, when arguing liquidity headroom."
             },
             Decision = "Present cash of $4.30M as the headroom figure until receivables are collected.",
-            PbiBuild = "Waterfall built as a stacked column with an invisible base. Categories: Cash, + AR, − AP, Net WC. Keep the currency donut out of the presentation until its measure reconciles to cash.",
+            PbiBuild = "Waterfall built as a stacked column with an invisible base. Categories: Cash, + AR, − AP, Net WC.",
             Callout = "The bridge uses cash + AR − AP. The NWC card uses AR − AP. Align them before the presentation."
+        },
+        new ElementDetail
+        {
+            Id = "d3-fx", Dashboard = 3,
+            Title = "Cash by currency",
+            ChartType = "Doughnut chart · legend in the report: SEK, USD, EUR, GBP",
+            Question = "How is the cash balance spread across currencies?",
+            WhatItShows = "The cash balance split into four currency slices as displayed on the Power BI page. The legend lists SEK, USD, EUR and GBP, and the donut reports a total of $25.03M.",
+            Insights = new[]
+            {
+                "The report shows four slices: $14.20M (56.7%), $4.30M (17.2%), $3.68M (14.7%) and $2.85M (11.4%).",
+                "The donut totals $25.03M, which does not match the $4.30M cash balance on the same page. Review the measure before quoting the number.",
+                "The legend lists SEK, USD, EUR and GBP, but the slice-to-currency mapping was not readable in the report, so currency exposure cannot be attributed yet."
+            },
+            Decision = "Reconcile the donut measure to the cash balance and confirm which slice is which currency before presenting FX exposure.",
+            PbiBuild = "Doughnut chart. Legend: cash update 2026[currency]. Values: [Cash Balance] converted to USD, using the same filter context as the cash KPI card.",
+            Callout = "Verify before presenting: the $25.03M total and the slice-to-currency mapping both need confirming in the model."
         }
     };
 }

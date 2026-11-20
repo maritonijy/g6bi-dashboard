@@ -22,6 +22,7 @@ Open the URL printed in the terminal (for example `http://localhost:5xxx`).
 | URL | What it is |
 |---|---|
 | `/` | Presentation deck: title, business problem, dashboard overview, key numbers, decisions, element index, conclusion. Use the arrows, dots, or ← → keys. |
+| `/presentation` | PowerPoint-style deck (24 slides, matching the presentation PDF): the three opening pages, the data-tables page, the three interactive dashboards, one explanation page per visual, recommendations and conclusion. Left panel, slide thumbnails, ← → keys, full screen. |
 | `/dashboard/1` | Executive Financial Health: KPI cards, revenue vs expenses, net income, cumulative gap. Quarter slicer. Click a month to cross-filter. |
 | `/dashboard/2` | Profitability & Budget: department slicer, cost by department, COGS split, opex trend, variance vs budget. Click a department to cross-filter. |
 | `/dashboard/3` | Cash, Receivables & Payables: bank slicer, cash by bank, AR and AP aging, working-capital waterfall. |
@@ -37,6 +38,9 @@ Element ids: `d1-kpi d1-trend d1-net d1-cum d1-slicers d2-kpi d2-dept d2-trend d
 | Numbers used in charts and KPIs | `Models/FinanceData.cs` |
 | Detail-page text (insight, decision, build steps) | `Models/ElementCatalog.cs` |
 | Slide content | `Views/Home/Index.cshtml` |
+| Presentation slides | `Views/Presentation/Index.cshtml`, `Views/Presentation/_ElementSlide.cshtml` |
+| Table metadata and element fields | `Models/PresentationCatalog.cs` |
+| Deck chrome, slide scaling, full screen | `wwwroot/css/presentation.css`, `wwwroot/js/presentation.js` |
 | Dashboard layouts | `Views/Dashboard/*.cshtml` |
 | Chart behaviour and cross-filtering | `wwwroot/js/app.js` |
 | Colours, spacing, breakpoints | `wwwroot/css/site.css` |
