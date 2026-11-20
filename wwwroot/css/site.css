@@ -173,6 +173,7 @@ select {
 }
 .dash-grid.two { grid-template-columns: 1fr 1fr; }
 .dash-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.dash-grid.full { grid-template-columns: 1fr; }
 
 .panel {
     background: var(--panel);
@@ -343,6 +344,21 @@ body.embed .bullets { gap: 6px; }
 body.embed .bullets li { font-size: 12px; }
 body.embed .takeaway p { font-size: 12px; }
 body.embed .hint { font-size: 10.5px; }
+body.embed .wrap { min-height: 100vh; padding-bottom: 0; }
+body.embed #exec-root,
+body.embed #prof-root,
+body.embed #cash-root { min-height: calc(100vh - 18px); display: flex; flex-direction: column; }
+body.embed #exec-root .dash-grid,
+body.embed #prof-root .dash-grid,
+body.embed #cash-root .dash-grid { flex: 1 1 0; min-height: 0; }
+body.embed #exec-root .panel,
+body.embed #prof-root .panel,
+body.embed #cash-root .panel { display: flex; flex-direction: column; min-height: 0; }
+body.embed #exec-root .chart-box,
+body.embed #prof-root .chart-box,
+body.embed #cash-root .chart-box { flex: 1 1 0; min-height: 0; height: auto; }
+body.embed #exec-root .panel .bullets,
+body.embed #cash-root .panel .bullets { flex: 1 1 auto; justify-content: space-around; }
 
 /* ───────── Responsive breakpoints ───────── */
 @media (max-width: 1200px) {

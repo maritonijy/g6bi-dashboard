@@ -224,12 +224,14 @@
     }
 
     function base(extra) {
-        return Object.assign({
+        var options = Object.assign({
             responsive: true,
             maintainAspectRatio: false,
             animation: { duration: 220 },
-            plugins: { legend: { display: false } }
-        }, extra);
+            plugins: {}
+        }, extra || {});
+        options.plugins = Object.assign({ legend: { display: false } }, options.plugins || {});
+        return options;
     }
 
     var builders = {
@@ -418,6 +420,7 @@
                 data: {
                     labels: d.banks.map(function (b) { return b.name; }),
                     datasets: [{
+                        label: "USD",
                         data: d.banks.map(function (b) { return b.value; }),
                         backgroundColor: [C.blue, C.violet],
                         borderRadius: 3
@@ -426,6 +429,7 @@
                 options: base({
                     indexAxis: "y",
                     plugins: {
+                        legend: { display: true, position: "top", align: "start" },
                         tooltip: { callbacks: { label: function (c) { return usdK(c.parsed.x); } } }
                     },
                     scales: {
@@ -460,6 +464,21 @@
                 },
                 options: base({
                     plugins: {
+                        legend: {
+                            display: true,
+                            position: "bottom",
+                            onClick: function () { },
+                            labels: {
+                                color: "#FFFFFF",
+                                generateLabels: function () {
+                                    return [
+                                        { text: "Increase", fillStyle: C.mint, strokeStyle: C.mint, lineWidth: 0, fontColor: "#FFFFFF" },
+                                        { text: "Decrease", fillStyle: C.coral, strokeStyle: C.coral, lineWidth: 0, fontColor: "#FFFFFF" },
+                                        { text: "Total", fillStyle: C.blue, strokeStyle: C.blue, lineWidth: 0, fontColor: "#FFFFFF" }
+                                    ];
+                                }
+                            }
+                        },
                         tooltip: {
                             filter: function (item) { return item.datasetIndex === 1; },
                             callbacks: { label: function (c) { return usdK(c.parsed.y); } }
@@ -478,7 +497,7 @@
             return new Chart(canvas, {
                 type: "doughnut",
                 data: {
-                    labels: d.fx.map(function (row) { return row.name; }),
+                    labels: ["SEK", "USD", "EUR", "GBP"],
                     datasets: [{
                         data: d.fx.map(function (row) { return row.value; }),
                         backgroundColor: [C.blue, C.violet, C.mint, C.amber],
