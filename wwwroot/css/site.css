@@ -15,6 +15,32 @@
     --orange: #FF8A5B;
 }
 
+/* Report palette sampled from the supplied Power BI dashboard screenshots. */
+body.report,
+body.embed {
+    --bg: #0B111D;
+    --slide: #0B111D;
+    --panel: #1F1F1F;
+    --line: #2B579E;
+    --txt: #F2F2F2;
+    --muted: #C6C6C6;
+    --dim: #AFAFAF;
+    --accent: #4DA6FF;
+    --mint: #1DE6B4;
+    --coral: #FF6B7A;
+    --amber: #EBD372;
+    --violet: #A68CF4;
+    --orange: #FF8A5C;
+    background: var(--bg);
+    min-height: 100vh;
+}
+body.report .topbar {
+    --txt: #E9EFF9;
+    --muted: #8CA0BE;
+    --line: #22304A;
+    --accent: #6FA8FF;
+}
+
 * { box-sizing: border-box; }
 
 html, body {
@@ -161,6 +187,26 @@ select {
 .kpi.bad::after { background: var(--coral); }
 .kpi.warn::after { background: var(--amber); }
 .kpi.vio::after { background: var(--violet); }
+body.report .kpi,
+body.embed .kpi { background: #1F1F1F; }
+/* Screenshot-specific KPI accent order on each report. */
+#exec-root .kpi:nth-child(1)::after { background: #4DA6FF; }
+#exec-root .kpi:nth-child(2)::after { background: #BF6845; }
+#exec-root .kpi:nth-child(3)::after { background: #BF5059; }
+#exec-root .kpi:nth-child(4)::after { background: #1ED897; }
+#exec-root .kpi:nth-child(5)::after { background: #EBD372; }
+#exec-root .kpi:nth-child(6)::after { background: #955EBF; }
+#prof-root .kpi:nth-child(1)::after { background: #4CD691; }
+#prof-root .kpi:nth-child(2)::after { background: #BF5059; }
+#prof-root .kpi:nth-child(3)::after { background: #4DA6FF; }
+#prof-root .kpi:nth-child(4)::after { background: #EBD372; }
+#prof-root .kpi:nth-child(5)::after { background: #955EBF; }
+#cash-root .kpi:nth-child(1)::after { background: #955EBF; }
+#cash-root .kpi:nth-child(2)::after { background: #4DA6FF; }
+#cash-root .kpi:nth-child(3)::after { background: #EBD372; }
+#cash-root .kpi:nth-child(4)::after { background: #1ED897; }
+#cash-root .kpi:nth-child(5)::after { background: #BF5059; }
+#cash-root .kpi:nth-child(6)::after { background: #BF6845; }
 .kpi .k { font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .kpi .v { font-size: clamp(18px, 2.2vw, 25px); font-weight: 700; margin-top: 3px; letter-spacing: -.4px; }
 .kpi .s { font-size: 11px; color: var(--dim); margin-top: 3px; }
@@ -183,6 +229,8 @@ select {
     padding: 12px 14px;
     min-width: 0;
 }
+body.report .panel,
+body.embed .panel { background: #1F1F1F; }
 .panel.takeaway, .takeaway {
     border-left: 3px solid var(--amber);
 }

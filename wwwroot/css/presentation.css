@@ -329,6 +329,74 @@ body.pp-mode {
 }
 .pp-closing .pp-credits { margin-top: 34px; padding-top: 0; }
 
+/* Slide 25 · Thank-you page */
+.pp-thankyou { padding: 52px 76px 34px; }
+.pp-thankyou-layout {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 44px;
+}
+.pp-thankyou-copy { flex: 1 1 52%; max-width: 560px; }
+.pp-thankyou-copy h1 {
+    color: var(--txt);
+    font-size: 76px;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin: 0;
+}
+.pp-thankyou-copy p {
+    color: #C6C6C6;
+    font-size: 23px;
+    line-height: 1.5;
+    margin: 22px 0 0;
+    max-width: 500px;
+}
+.pp-thankyou-cat {
+    position: relative;
+    flex: 0 1 480px;
+    width: 480px;
+    max-width: 48%;
+    margin-right: 12px;
+}
+.pp-thankyou-cat svg {
+    display: block;
+    width: 100%;
+    overflow: visible;
+    animation: pp-cat-float 2.4s ease-in-out infinite;
+    transform-origin: 50% 50%;
+}
+.pp-cat-heart { transform-box: fill-box; transform-origin: center; }
+.pp-cat-heart-one { animation: pp-kiss-heart 1.8s ease-in-out infinite; }
+.pp-cat-heart-two { animation: pp-kiss-heart 1.8s ease-in-out .35s infinite; }
+.pp-cat-heart-three { animation: pp-kiss-heart 1.8s ease-in-out .7s infinite; }
+@keyframes pp-cat-float {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-12px) rotate(1deg); }
+}
+@keyframes pp-kiss-heart {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.08); }
+}
+.pp-cat-speech {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: -8px;
+    padding: 11px 16px;
+    border: 1px solid #4DA6FF;
+    border-radius: 18px 18px 4px 18px;
+    background: #1F1F1F;
+    color: #F2F2F2;
+    font-size: 15px;
+    font-weight: 700;
+    transform: rotate(3deg);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .22);
+}
+.pp-thankyou .pp-credits { margin-top: 0; padding-top: 10px; }
+
 .pp-legacy-cards .link-card {
     text-align: left;
     font: inherit;
@@ -871,4 +939,5 @@ body.pp-mode {
 @media (prefers-reduced-motion: reduce) {
     .pp-slide.on { animation: none; }
     .pp-navitem, .pp-thumb, .pp-btn { transition: none; }
+    .pp-thankyou-cat svg, .pp-cat-heart { animation: none; }
 }

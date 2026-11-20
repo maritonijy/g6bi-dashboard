@@ -1,6 +1,7 @@
 @{
     // ?embed=1 renders just the report body, for the presentation's dashboard overview slides
     var embed = Context.Request.Query["embed"] == "1";
+    var report = ViewData["ReportTheme"] as bool? == true;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 
-<body class="@(embed ? "embed" : "app")">
+<body class="@(embed ? "embed" : report ? "report" : "app")">
     @if (!embed)
     {
         <header class="topbar">

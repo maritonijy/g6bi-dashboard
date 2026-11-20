@@ -2,8 +2,8 @@
     "use strict";
 
     var C = {
-        blue: "#6FA8FF", violet: "#A78BFA", mint: "#3DDC97", coral: "#FF6B7A",
-        amber: "#FFC24B", orange: "#FF8A5B", grid: "#1B2740", muted: "#8CA0BE"
+        blue: "#4DA6FF", violet: "#A68CF4", mint: "#1DE6B4", coral: "#FF6B7A",
+        amber: "#EBD372", orange: "#FF8A5C", grid: "#333333", muted: "#C6C6C6"
     };
 
     var SERIES_COLOR = { People: C.blue, Marketing: C.violet, Technology: C.mint, General: C.amber };
@@ -30,8 +30,8 @@
         Chart.defaults.font.size = 11;
         Chart.defaults.borderColor = C.grid;
         Chart.defaults.plugins.legend.labels.boxWidth = 10;
-        Chart.defaults.plugins.tooltip.backgroundColor = "#0E1727";
-        Chart.defaults.plugins.tooltip.borderColor = "#2A3B57";
+        Chart.defaults.plugins.tooltip.backgroundColor = "#0B111D";
+        Chart.defaults.plugins.tooltip.borderColor = "#2B579E";
         Chart.defaults.plugins.tooltip.borderWidth = 1;
     }
 
@@ -147,7 +147,7 @@
             type: "bar",
             data: {
                 labels: d.months,
-                datasets: [{ label: "Net income", data: d.net, backgroundColor: C.coral, borderRadius: 3 }]
+                datasets: [{ label: "Net income", data: d.net, backgroundColor: "#BF5059", borderRadius: 3 }]
             },
             options: base({
                 onClick: onMonth,
@@ -166,8 +166,8 @@
                 datasets: [{
                     label: "Cumulative gap",
                     data: d.cumulative,
-                    borderColor: C.coral,
-                    backgroundColor: "rgba(255,107,122,0.18)",
+                    borderColor: "#BF5059",
+                    backgroundColor: "rgba(191,80,89,0.18)",
                     fill: "origin",
                     tension: 0.25,
                     pointRadius: 3,
@@ -207,7 +207,7 @@
             trend.data.datasets[1].backgroundColor = f.map(function (x) { return dim(C.orange, x); });
             trend.update();
 
-            net.data.datasets[0].backgroundColor = f.map(function (x) { return dim(C.coral, x); });
+            net.data.datasets[0].backgroundColor = f.map(function (x) { return dim("#BF5059", x); });
             net.update();
 
             cum.data.datasets[0].pointRadius = f.map(function (x) { return x ? 4 : 2; });
@@ -273,7 +273,7 @@
                 datasets: [{
                     data: d.cogs.map(function (x) { return x.value; }),
                     backgroundColor: [C.blue, C.violet],
-                    borderColor: "#121C2E",
+                    borderColor: "#1F1F1F",
                     borderWidth: 3
                 }]
             },
@@ -439,7 +439,7 @@
                     { data: [0, 4300, 6300, 0], backgroundColor: "rgba(0,0,0,0)", stack: "s" },
                     {
                         data: [4300, 2860, 860, 6300],
-                        backgroundColor: [C.blue, C.mint, C.coral, C.blue],
+                            backgroundColor: [C.mint, C.mint, C.coral, C.blue],
                         stack: "s",
                         borderRadius: 3
                     }

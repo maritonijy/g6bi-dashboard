@@ -17,7 +17,6 @@ C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\rjimswa.dswa.cach
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\scopedcss\bundle\KovaDashboard.styles.css
-C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\n4pdi6sggk-{0}-0r1poyzye4-0r1poyzye4.gz
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\staticwebassets.development.json
@@ -28,7 +27,8 @@ C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\refint\KovaDashbo
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\KovaDashboard.pdb
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\KovaDashboard.genruntimeconfig.cache
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\ref\KovaDashboard.dll
-C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\ttats4babq-{0}-vtdxwyhws6-vtdxwyhws6.gz
-C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\sdznga7gqv-{0}-rznpg5kps1-rznpg5kps1.gz
-C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\emstx9v5e4-{0}-vsjab2s81t-vsjab2s81t.gz
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\2afy4nqio1-{0}-9dpas29hec-9dpas29hec.gz
+C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\emstx9v5e4-{0}-m7pafmy5n7-m7pafmy5n7.gz
+C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\sdznga7gqv-{0}-qw5ftr0pst-qw5ftr0pst.gz
+C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\n4pdi6sggk-{0}-4743px2uqw-4743px2uqw.gz
+C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\ttats4babq-{0}-szbztjr2qq-szbztjr2qq.gz
