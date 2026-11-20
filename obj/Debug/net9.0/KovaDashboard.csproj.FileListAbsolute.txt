@@ -17,7 +17,6 @@ C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\rjimswa.dswa.cach
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\scopedcss\bundle\KovaDashboard.styles.css
-C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\sdznga7gqv-{0}-qgywt5f1n8-qgywt5f1n8.gz
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\emstx9v5e4-{0}-ejyua4e3du-ejyua4e3du.gz
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\n4pdi6sggk-{0}-0r1poyzye4-0r1poyzye4.gz
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\ttats4babq-{0}-ooe0dc28oy-ooe0dc28oy.gz
@@ -32,3 +31,4 @@ C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\refint\KovaDashbo
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\KovaDashboard.pdb
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\KovaDashboard.genruntimeconfig.cache
 C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\ref\KovaDashboard.dll
+C:\Users\Maritoni Sapinoso\repos\bi-dashboard\obj\Debug\net9.0\compressed\sdznga7gqv-{0}-1617pv3i65-1617pv3i65.gz

@@ -32,7 +32,6 @@
                 <span class="pp-top-sub">ITELEC4 · Final Project · Group 6</span>
             </div>
             <div class="pp-top-right">
-                <a class="pp-ghost" href="/">Classic deck</a>
                 <a class="pp-ghost" href="/Home/Schema">Model &amp; tables</a>
                 <button id="ppFsTop" class="pp-solid" type="button">Present</button>
             </div>
@@ -41,22 +40,31 @@
         <div class="pp-stage" id="ppStage">
             <div class="pp-frame" id="ppFrame">
 
-                <!-- 1 · Title (existing page, preserved) -->
+                <!-- 1 · Title -->
                 <section class="pp-slide" data-title="Title" data-group="Opening">
-                    <div class="pp-canvas pp-legacy">
+                    <div class="pp-canvas pp-legacy pp-title-slide">
                         <div class="eyebrow">ITELEC4 · Final Project · Group 6</div>
                         <h1 class="pp-title">Finance Performance<br />Analysis Dashboard</h1>
-                        <p class="sub pp-lead">Kova Inc. · FY2025 · Revenue, expenses and profitability · Budget vs actual · Cash flow, receivables and payables</p>
+                        <p class="sub pp-lead">Kova Inc. · FY2025 · Revenue, budget, cash, receivables and payables</p>
                         <div class="pills">
                             <span class="pill on">3 dashboards</span>
-                            <span class="pill">15 element pages</span>
-                            <span class="pill">star schema</span>
-                            <span class="pill">slicers + cross-filtering</span>
+                            <span class="pill">Star Schema</span>
+                            <span class="pill">Slicers and tooltips</span>
+                            <span class="pill">KOVA Dataset</span>
+                            <span class="pill">Takeaways</span>
                         </div>
-                        <p class="sub pp-credits">
-                            Prepared by: Joan N. Chavez · Angela M. Delima · Jayrald Miguel O. Doronio · Fredelina R. Gonzales · Jericho E. Magsino · Maritoni Joy Sapinoso<br />
-                            Instructor: Prof. Arsenio Arellano Jr.
-                        </p>
+                        <div class="sub pp-credits">
+                            <b>Prepared by</b>
+                            <ul class="pp-title-credits">
+                                <li>JOAN N. CHAVEZ · Researcher</li>
+                                <li>ANGELA M. DELIMA · Documentation Lead</li>
+                                <li>JAYRALD MIGUEL O. DORONIO · KPI Analyst</li>
+                                <li>FREDELINA R. GONZALES · Data Analyst</li>
+                                <li>JERICHO E. MAGSINO · Visualization Designer</li>
+                                <li>MARITONI JOY SAPINOSO · Dashboard Developer</li>
+                            </ul>
+                            <p class="pp-title-instructor">Instructor: PROF. ARSENIO ARELLANO JR.</p>
+                        </div>
                     </div>
                 </section>
 
@@ -226,7 +234,6 @@
                                     <iframe data-src="/dashboard/@deck.Number?embed=1"
                                             title="Dashboard @deck.Number: @deck.Name, interactive"></iframe>
                                 </div>
-                                <span class="pp-report-hint">Live report — use the slicers and click a bar or month to filter. Slide change keeps your selection.</span>
                             </div>
                         </div>
                     </section>

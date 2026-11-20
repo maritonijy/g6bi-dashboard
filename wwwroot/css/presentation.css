@@ -269,6 +269,14 @@ body.pp-mode {
 .pp-lead { font-size: 15px; max-width: 800px; margin-top: 14px; }
 .pp-credits { font-size: 11.5px; line-height: 1.6; margin-top: auto; padding-top: 26px; color: #7d8fab; }
 .pp-legacy .pills { margin-top: 22px; }
+.pp-title-slide { padding: 94px 74px 44px; }
+.pp-title-slide .eyebrow { font-size: 19px; letter-spacing: 0; text-transform: none; }
+.pp-title-slide .pp-title { font-size: 60px; line-height: 1.2; margin-top: 22px; letter-spacing: -.8px; }
+.pp-title-slide .pp-lead { max-width: none; font-size: 21px; margin-top: 14px; }
+.pp-title-slide .pills { margin-top: 28px; }
+.pp-title-slide .pp-credits { margin-top: 36px; padding-top: 0; color: var(--txt); font-size: 16px; line-height: 1.55; }
+.pp-title-credits { list-style: none; margin: 8px 0 0; padding: 0; font-weight: 700; }
+.pp-title-instructor { color: #8ca0be; font-weight: 700; margin: 14px 0 0; }
 .pp-legacy-bullets { margin-top: 28px; font-size: 15px; gap: 14px; max-width: 1000px; }
 .pp-legacy-cards { margin-top: 30px; }
 
