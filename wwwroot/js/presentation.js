@@ -572,10 +572,40 @@
         });
     }
 
+    function initRelationshipModal() {
+        var modal = document.getElementById("ppRelationshipModal");
+        var opener = document.getElementById("ppRelationshipOpen");
+        if (!modal || !opener) return;
+
+        var closeButton = modal.querySelector(".pp-rel-close");
+        function close() {
+            modal.hidden = true;
+            modal.setAttribute("aria-hidden", "true");
+            opener.focus();
+        }
+
+        opener.addEventListener("click", function () {
+            modal.hidden = false;
+            modal.setAttribute("aria-hidden", "false");
+            closeButton.focus();
+        });
+        modal.querySelectorAll("[data-rel-close]").forEach(function (button) {
+            button.addEventListener("click", close);
+        });
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && !modal.hidden) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                close();
+            }
+        }, true);
+    }
+
     /* ───────── Wiring ───────── */
 
     buildChrome();
     initTables();
+    initRelationshipModal();
 
     document.getElementById("ppPrev").addEventListener("click", function () { show(current - 1); });
     document.getElementById("ppNext").addEventListener("click", function () { show(current + 1); });

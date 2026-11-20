@@ -117,7 +117,7 @@ public static class PresentationCatalog
             {
                 new TableColumn("month_name", "Text"),
                 new TableColumn("month_start", "Date"),
-                new TableColumn("Quarter", "Text")
+                new TableColumn("quarter", "Text")
             }
         },
         new()
@@ -136,8 +136,40 @@ public static class PresentationCatalog
         {
             Name = "_Measures",
             Kind = "Supporting",
-            Purpose = "Home of the DAX measures used across the three dashboards.",
-            Columns = new[] { new TableColumn("placeholder", "Text", Hidden: true) }
+            Purpose = "DAX measures used across the three dashboards. The placeholder measure is hidden in the model.",
+            Columns = new[]
+            {
+                new TableColumn("AP Outstanding", "DAX measure"),
+                new TableColumn("AR Outstanding", "DAX measure"),
+                new TableColumn("Bank Balance USD", "DAX measure"),
+                new TableColumn("Budget Operating Expenses", "DAX measure"),
+                new TableColumn("Budget Revenue", "DAX measure"),
+                new TableColumn("Budget Utilisation %", "DAX measure"),
+                new TableColumn("Cash Balance", "DAX measure"),
+                new TableColumn("COGS", "DAX measure"),
+                new TableColumn("Cost", "DAX measure"),
+                new TableColumn("Cumulative Revenue Gap", "DAX measure"),
+                new TableColumn("DPO", "DAX measure"),
+                new TableColumn("DSO", "DAX measure"),
+                new TableColumn("Gross Margin %", "DAX measure"),
+                new TableColumn("Invoices Collected %", "DAX measure"),
+                new TableColumn("Invoices Paid %", "DAX measure"),
+                new TableColumn("Net Income", "DAX measure"),
+                new TableColumn("Net Income (Loss)", "DAX measure"),
+                new TableColumn("Net Income Card", "DAX measure"),
+                new TableColumn("Net Loss Label", "DAX measure"),
+                new TableColumn("Net Margin %", "DAX measure"),
+                new TableColumn("Net Working Capital", "DAX measure"),
+                new TableColumn("Operating Expenses", "DAX measure"),
+                new TableColumn("Opex Variance (Over)/Under", "DAX measure"),
+                new TableColumn("Opex Variance %", "DAX measure"),
+                new TableColumn("Revenue", "DAX measure"),
+                new TableColumn("Revenue Gap", "DAX measure"),
+                new TableColumn("Revenue Variance %", "DAX measure"),
+                new TableColumn("Total Expenses", "DAX measure"),
+                new TableColumn("Total Revenue", "DAX measure"),
+                new TableColumn("placeholder", "DAX measure", Hidden: true)
+            }
         },
         new()
         {

@@ -117,9 +117,10 @@
                             <div>
                                 <div class="pp-eyebrow">Data model · Page 4</div>
                                 <h1>Tables used in the Power BI project</h1>
-                                <p class="pp-sub">Thirteen tables: four facts, three dimensions, two supporting tables and four auto date tables. Select a table to read its exact columns and data types.</p>
+                                <p class="pp-sub">Thirteen model tables, including 29 named DAX measures. Select a table to inspect its fields, data types and visibility.</p>
                             </div>
                             <div class="pp-chiprow">
+                                <button type="button" id="ppRelationshipOpen" class="pp-chip pp-relationship-btn" aria-haspopup="dialog" aria-controls="ppRelationshipModal">Relationship</button>
                                 <span class="pp-chip on">4 fact</span>
                                 <span class="pp-chip">3 dimension</span>
                                 <span class="pp-chip">2 supporting</span>
@@ -161,7 +162,7 @@
                                         <div class="pp-cols-wrap">
                                             <table class="pp-cols">
                                                 <thead>
-                                                    <tr><th>Column</th><th>Data type</th><th>Visibility</th></tr>
+                                                    <tr><th>@(table.Name == "_Measures" ? "Measure" : "Column")</th><th>Data type</th><th>Visibility</th></tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach (var column in table.Columns)
@@ -181,8 +182,7 @@
                         </div>
 
                         <p class="pp-tables-foot">
-                            Relationships were inferred from shared keys — <code>account_code</code>, <code>account_name</code>, <code>department</code> and <code>month_start</code>.
-                            Confirm cardinality and filter direction in Power BI’s Model view.
+                            Model view relationships: budget update 2026 and ledger update 2026 link to dim_account, dim_department and dim_month; invoices update 2026 links to dim_month. Cash update 2026, WC Steps and _Measures show no relationships. Confirm cardinality and filter direction in Power BI’s Model view.
                         </p>
                     </div>
                 </section>
@@ -294,5 +294,14 @@
                 <button id="ppFs" type="button" class="pp-btn pp-fs" aria-label="Toggle full screen" title="Full screen (F)">Full screen</button>
             </div>
         </footer>
+    </div>
+
+    <div class="pp-rel-modal" id="ppRelationshipModal" role="dialog" aria-modal="true" aria-labelledby="ppRelationshipTitle" aria-hidden="true" hidden>
+        <div class="pp-rel-backdrop" data-rel-close></div>
+        <section class="pp-rel-window" tabindex="-1">
+            <h2 id="ppRelationshipTitle">Model relationships</h2>
+            <button type="button" class="pp-rel-close" aria-label="Close relationships window" title="Close" data-rel-close>×</button>
+            <img src="/presentation/images/04-relationships.png" alt="Power BI model diagram showing relationships between budget, invoice, ledger and dimension tables" />
+        </section>
     </div>
 </div>

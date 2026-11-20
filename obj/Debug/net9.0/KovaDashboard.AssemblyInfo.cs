@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KovaDashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c421ffc4548bfd736d8b44f4a76129b045fd391")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+604beeaf4edd1affcff117b0ef3c77b0c763db6a")]
 [assembly: System.Reflection.AssemblyProductAttribute("KovaDashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KovaDashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

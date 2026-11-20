@@ -146,6 +146,7 @@ select {
     gap: 10px;
     margin-bottom: 12px;
 }
+#prof-root .kpis { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 .kpi {
     background: linear-gradient(180deg, #142034, #111A2B);
     border: 1px solid var(--line);
